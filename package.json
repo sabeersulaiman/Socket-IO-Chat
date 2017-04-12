@@ -4,12 +4,18 @@
   "description": "Socket IO Chat application",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "start": "concurrent \"npm run mithril\" \"npm run socket\"",
+    "mithril": "webpack src/index.js bin/app.js --watch",
+    "socket": "node index.js"
   },
   "author": "Sabeer Sulaiman",
   "license": "MIT",
   "dependencies": {
     "express": "^4.15.2",
+    "mithril": "^1.1.1",
     "socket.io": "^1.7.3"
+  },
+  "devDependencies": {
+    "concurrently": "^3.4.0"
   }
 }

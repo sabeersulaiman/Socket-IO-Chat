@@ -14,29 +14,27 @@
     </style>
   </head>
   <body>
-    <ul id="messages"></ul>
-    <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
-    </form>
+    
   </body>
   <script src="/socket.io/socket.io.js"></script>
-<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script src="app.js"></script>
 <script>
-  $(function () {
-    var socket = io();
-    $('form').submit(function(){
-      var m = $('#m').val();
-      socket.emit('chat message', m);
-      $('#messages').append($('<li>').text(m));
-      $('#m').val('');
-      return false;
-    });
-    socket.on('chat message', function(msg){
-      $('#messages').append($('<li>').text(msg));
-    });
-    socket.on('online', function(msg){
-      $('#messages').append($('<li>').text("You are online."));
-    });
-  });
+  // $(function () {
+  //   var socket = io();
+  //   socket.emit('');
+  //   $('form').submit(function(){
+  //     var m = $('#m').val();
+  //     socket.emit('chat message', m);
+  //     $('#messages').append($('<li>').text(m));
+  //     $('#m').val('');
+  //     return false;
+  //   });
+  //   socket.on('chat message', function(msg){
+  //     $('#messages').append($('<li>').text(msg));
+  //   });
+  //   socket.on('online', function(msg){
+  //     $('#messages').append($('<li>').text("You are now online."));
+  //   });
+  // });
 </script>
 </html>
